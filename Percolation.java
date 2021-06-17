@@ -11,7 +11,7 @@ public class Percolation {
         virtualBottomSite = n * n + 1;
         virtualTopSite = 0;
         quickUnionUF = new WeightedQuickUnionUF(n * n + 2);
-        grid = new int[n][n]; // n Zeile, n Spalten oder n Array mit jeweils n Einträg
+        grid = new int[n][n];
     }
 
     public int to1D(int row, int col) {
@@ -52,9 +52,6 @@ public class Percolation {
     }
 
     public boolean isOpen(int row, int col) {
-        if (row >= grid.length || col >= grid.length || row < 0 || col < 0)
-            throw new IllegalArgumentException();
-
         return grid[row][col] == 1;
     }
 
